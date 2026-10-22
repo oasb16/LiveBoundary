@@ -158,6 +158,8 @@ Every output is enumerated up to a configurable cap. An empty valid set raises
 Measured locally on macOS with Python 3.9.6, PyTorch 2.8.0, three fixed seeds, 100 baseline
 pretraining steps, and 80 adaptation steps. All data are synthetic.
 
+<img src="assets/forgetting-result-card.svg" alt="Task-only adaptation learned every new fact but retained none of the prior-fact probes; preservation and replay restored retention" width="100%" />
+
 | Strategy | New facts | Prior retention | Stable behavior | Accepted updates |
 | :--- | ---: | ---: | ---: | ---: |
 | 🧊 Frozen baseline | `0.056` | `1.000` | `1.000` | N/A |

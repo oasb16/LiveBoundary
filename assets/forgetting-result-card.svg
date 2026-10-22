@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">LiveBoundary forgetting experiment</title>
+  <desc id="desc">Task-only adaptation learned all new facts and retained none of the prior fact probes. Preservation and replay restored retention.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050816"/>
+      <stop offset="0.56" stop-color="#15103a"/>
+      <stop offset="1" stop-color="#06242d"/>
+    </linearGradient>
+    <linearGradient id="learn" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="keep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#10b981"/>
+      <stop offset="1" stop-color="#34d399"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#cbd5e1" stroke-opacity=".045"/>
+    </pattern>
+    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="18" flood-color="#000" flood-opacity=".45"/></filter>
+  </defs>
+
+  <rect width="1600" height="900" rx="36" fill="url(#bg)"/>
+  <rect width="1600" height="900" rx="36" fill="url(#grid)"/>
+  <circle cx="1430" cy="90" r="300" fill="#0ea5e9" opacity=".07"/>
+  <circle cx="100" cy="760" r="260" fill="#8b5cf6" opacity=".08"/>
+
+  <g font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif">
+    <g transform="translate(88 72)">
+      <path d="M39 0 74 16v29c0 28-14 47-35 58C18 92 4 73 4 45V16Z" fill="#0f172a" stroke="#38bdf8" stroke-width="3"/>
+      <path d="m23 51 11 11 22-25" fill="none" stroke="#34d399" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="96" y="38" fill="#f8fafc" font-size="37" font-weight="800">LiveBoundary</text>
+      <text x="96" y="72" fill="#94a3b8" font-size="21">A three-seed PyTorch mechanism experiment</text>
+    </g>
+
+    <text x="88" y="244" fill="#f8fafc" font-size="62" font-weight="850" letter-spacing="-1.5">IT LEARNED EVERY NEW FACT.</text>
+    <text x="88" y="317" fill="#fb7185" font-size="62" font-weight="850" letter-spacing="-1.5">THEN FORGOT EVERY OLD ONE.</text>
+
+    <g transform="translate(88 382)" filter="url(#shadow)">
+      <rect width="684" height="254" rx="26" fill="#0b1228" stroke="#334155" stroke-width="2"/>
+      <text x="38" y="50" fill="#94a3b8" font-size="20" font-weight="700" letter-spacing="2">TASK-ONLY ADAPTATION</text>
+      <text x="38" y="129" fill="#f8fafc" font-size="69" font-weight="850">1.000</text>
+      <text x="270" y="129" fill="#94a3b8" font-size="25">new-fact accuracy</text>
+      <rect x="38" y="156" width="608" height="17" rx="9" fill="#1e293b"/>
+      <rect x="38" y="156" width="608" height="17" rx="9" fill="url(#learn)"/>
+      <text x="38" y="220" fill="#fb7185" font-size="45" font-weight="850">0.000</text>
+      <text x="212" y="220" fill="#94a3b8" font-size="25">prior-fact retention</text>
+    </g>
+
+    <g transform="translate(828 382)" filter="url(#shadow)">
+      <rect width="684" height="254" rx="26" fill="#0b1228" stroke="#0f766e" stroke-width="2"/>
+      <text x="38" y="50" fill="#94a3b8" font-size="20" font-weight="700" letter-spacing="2">BOUNDARY + PRESERVATION / REPLAY</text>
+      <text x="38" y="129" fill="#f8fafc" font-size="69" font-weight="850">0.944</text>
+      <text x="270" y="129" fill="#94a3b8" font-size="25">new-fact accuracy</text>
+      <rect x="38" y="156" width="608" height="17" rx="9" fill="#1e293b"/>
+      <rect x="38" y="156" width="574" height="17" rx="9" fill="url(#learn)"/>
+      <text x="38" y="220" fill="#34d399" font-size="45" font-weight="850">1.000</text>
+      <text x="212" y="220" fill="#94a3b8" font-size="25">prior-fact retention</text>
+    </g>
+
+    <g transform="translate(88 688)">
+      <text x="0" y="32" fill="#f8fafc" font-size="27" font-weight="700">The interesting result was the failure.</text>
+      <text x="0" y="73" fill="#94a3b8" font-size="23">One regressed candidate was rejected before it could become accepted history.</text>
+      <rect x="0" y="108" width="1424" height="2" fill="#334155"/>
+      <text x="0" y="160" fill="#38bdf8" font-size="23" font-weight="700">github.com/oasb16/LiveBoundary</text>
+      <text x="1424" y="160" text-anchor="end" fill="#64748b" font-size="19">synthetic data · seeds 3, 17, 41 · raw records published</text>
+    </g>
+  </g>
+
+  <rect x="2" y="2" width="1596" height="896" rx="34" fill="none" stroke="#38bdf8" stroke-opacity=".35" stroke-width="4"/>
+</svg>
