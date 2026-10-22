@@ -1,5 +1,9 @@
 # LiveBoundary
 
+[![CI](https://github.com/oasb16/LiveBoundary/actions/workflows/ci.yml/badge.svg)](https://github.com/oasb16/LiveBoundary/actions/workflows/ci.yml)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
+
 LiveBoundary is a small research library for **constrained online adaptation**: it updates a
 model's existing PyTorch parameters from verified examples while adding differentiable losses for
 explicit business boundaries. Candidate updates are evaluated and either atomically promoted or
@@ -9,6 +13,36 @@ This project demonstrates a mechanism on a tiny offline model. It does not estab
 effectiveness, database reliability, autonomous lifelong learning, generic policy compilation,
 guaranteed deletion or unlearning, or a new learning algorithm. “Anti-training” is only informal
 motivation.
+
+## Why this exists
+
+Most “memory” systems leave the model unchanged and recover facts from runtime context. LiveBoundary
+tests a narrower, harder question: can verified facts and explicit operating boundaries be written
+into native model parameters, survive a fresh-process restart with all training context removed, and
+still pass retention and usefulness gates?
+
+The first synthetic experiment publishes the failure as well as the success:
+
+| Strategy | New facts | Prior retention | Stable behavior | Accepted updates |
+| --- | ---: | ---: | ---: | ---: |
+| Frozen baseline | 0.056 | 1.000 | 1.000 | N/A |
+| Task only | 1.000 | 0.000 | 0.833 | 2/3 |
+| Boundary guided | 1.000 | 0.000 | 0.833 | 2/3 |
+| Boundary + preservation/replay | 0.944 | 1.000 | 1.000 | 3/3 |
+
+Raw per-seed results and rejected candidates are checked in. See
+[`RESULTS.md`](RESULTS.md) and [`benchmark-results.json`](benchmark-results.json).
+
+## What you can inspect
+
+- Existing PyTorch parameters change through real gradients; per-parameter change magnitudes are
+  recorded.
+- A closed constraint language supports allowed/forbidden categories, implication, conjunction,
+  disjunction, negation, and trusted-field conditions.
+- Candidate updates are independently cloned, evaluated, accepted or rejected, atomically
+  checkpointed, and rollable to an earlier accepted version.
+- Strict evaluation starts a fresh process that receives only a checkpoint and a structured question.
+- The baseline remains an immutable recovery point and is never treated as truth for new facts.
 
 ## Quickstart
 
