@@ -1,3 +1,6 @@
+# Copyright 2026 LiveBoundary contributors
+# SPDX-License-Identifier: Apache-2.0
+
 """Fresh-process inference that loads only one checkpoint and one question."""
 
 from __future__ import annotations

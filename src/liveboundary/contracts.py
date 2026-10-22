@@ -1,3 +1,6 @@
+# Copyright 2026 LiveBoundary contributors
+# SPDX-License-Identifier: Apache-2.0
+
 """Serializable public data contracts."""
 
 from __future__ import annotations

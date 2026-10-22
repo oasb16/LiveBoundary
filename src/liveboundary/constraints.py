@@ -1,3 +1,6 @@
+# Copyright 2026 LiveBoundary contributors
+# SPDX-License-Identifier: Apache-2.0
+
 """Finite, explicit constraint language and exact satisfaction-mass loss."""
 
 from __future__ import annotations

@@ -1,3 +1,6 @@
+# Copyright 2026 LiveBoundary contributors
+# SPDX-License-Identifier: Apache-2.0
+
 """Model adapter protocol and the offline PyTorch reference adapter."""
 
 from __future__ import annotations

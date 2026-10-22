@@ -1,3 +1,6 @@
+# Copyright 2026 LiveBoundary contributors
+# SPDX-License-Identifier: Apache-2.0
+
 """Bounded synthetic experiments. All entities and labels are fictional."""
 
 from __future__ import annotations

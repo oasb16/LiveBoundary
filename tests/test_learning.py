@@ -1,3 +1,6 @@
+# Copyright 2026 LiveBoundary contributors
+# SPDX-License-Identifier: Apache-2.0
+
 from liveboundary import AdaptationConfig, BusinessLearner, EvaluationSuite
 from liveboundary.models import states_equal
 

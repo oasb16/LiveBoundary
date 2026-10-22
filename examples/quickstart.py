@@ -1,3 +1,6 @@
+# Copyright 2026 LiveBoundary contributors
+# SPDX-License-Identifier: Apache-2.0
+
 """Minimal offline constrained-adaptation example."""
 
 from pathlib import Path

@@ -322,6 +322,7 @@ ruff check .
 
 [Open an issue](https://github.com/oasb16/LiveBoundary/issues/new) · [Read the architecture](docs/architecture.md) · [Inspect raw results](benchmark-results.json) · [Download the latest release](https://github.com/oasb16/LiveBoundary/releases/latest)
 
-Apache-2.0 licensed. Original implementation. No hosted dependency.
+Licensed under the [Apache License 2.0](LICENSE). See [`NOTICE`](NOTICE) for attribution.
+Original implementation. No hosted dependency.
 
 </div>
